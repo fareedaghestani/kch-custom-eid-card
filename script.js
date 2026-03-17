@@ -8,7 +8,7 @@ const inputPage = document.getElementById('inputPage');
 const cardPage = document.getElementById('cardPage');
 
 const cardImage = new Image();
-cardImage.src = 'Eid Mubarak.png';
+cardImage.src = 'Eid-Mubarak.png';
 
 function drawCard(name = '') {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
