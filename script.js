@@ -20,11 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.font = 'bold 42px "Tajawal", Arial, sans-serif';
       ctx.fillStyle = '#ffffff';
       ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
+     // Use 'top' so we can control vertical offset
+        ctx.textBaseline = 'top';
 
-      const textY = canvas.height / 2 - 60;
-      ctx.fillText(name, canvas.width / 2, textY);
+        // Move text slightly above the vertical center
+        const textY = canvas.height / 2 - 60; // adjust 60 as needed
 
+        ctx.fillText(name, canvas.width / 2, textY);
       canvas.classList.add('card-visible');
     }
   }
