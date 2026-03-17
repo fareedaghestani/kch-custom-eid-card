@@ -1,1 +1,1 @@
-# kch-custom-ramadan-greeting
+# kch-custom-eid-greeting
