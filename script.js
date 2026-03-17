@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.textBaseline = 'middle';
 
         // Fixed pixel offset above center
-        const textY = canvas.height / 2 - 150; // change 80 to move higher/lower
+        const textY = canvas.height / 2 - 40; // change 80 to move higher/lower
 
         ctx.fillText(name, canvas.width / 2, textY);
 
