@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.textBaseline = 'middle';
 
       // ✅ Move text slightly above center (responsive)
-      const offset = 0.15; // 15% above center
+      const offset = 0.10; // 15% above center
       const textY = canvas.height / 2 - (canvas.height * offset);
 
       ctx.fillText(name, canvas.width / 2, textY);
