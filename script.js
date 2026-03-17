@@ -21,13 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.font = `bold ${fontSize}px "Tajawal", Arial, sans-serif`;
       ctx.fillStyle = '#ffffff';
       ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
+     ctx.textBaseline = 'middle';
 
-      // ✅ Move text slightly above center (responsive)
-      const offset = 0.10; // 15% above center
-      const textY = canvas.height / 2 - (canvas.height * offset);
+        // Fixed pixel offset above center
+        const textY = canvas.height / 2 - 80; // change 80 to move higher/lower
 
-      ctx.fillText(name, canvas.width / 2, textY);
+        ctx.fillText(name, canvas.width / 2, textY);;
 
       canvas.classList.add('card-visible');
     }
