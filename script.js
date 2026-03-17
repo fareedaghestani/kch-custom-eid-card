@@ -31,7 +31,7 @@ function drawCard(name = '') {
 
 cardImage.onload = () => drawCard();
 
-generateBtn.onclick = () => {
+generateBtn.addEventListener('click', () =>  {
     const name = nameInput.value.trim();
     if (!name) {
         alert('Please enter your name!');
