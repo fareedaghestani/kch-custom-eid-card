@@ -4,25 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eid Mubarak Greeting</title>
+
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-      <!-- Page 1: Input -->
-      <div id="inputPage">
-        <h1>Eid Mubarak Card</h1>
-        <input type="text" id="nameInput" placeholder="Enter your name" maxlength="30">
-        <button id="generateBtn">Generate Card</button>
-      </div>
-      <!-- Page 2: Card & Download -->
-      <div id="cardPage" style="display:none;">
-        <canvas id="eidCardCanvas" width="768" height="768"></canvas>
-        <br>
-        <button id="downloadBtn">Download Card</button>
-        <button id="backBtn">Back</button> <!-- Aligned correctly -->
-      </div>
+  <div class="container">
+
+    <!-- Page 1 -->
+    <div id="inputPage">
+      <h1>Eid Mubarak Card</h1>
+      <input type="text" id="nameInput" placeholder="Enter your name" maxlength="30">
+      <button id="generateBtn">Generate Card</button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Page 2 -->
+    <div id="cardPage" style="display:none;">
+      <canvas id="eidCardCanvas" width="768" height="768"></canvas>
+      <br>
+      <button id="downloadBtn">Download Card</button>
+      <button id="backBtn">Back</button>
+    </div>
+
+  </div>
+
+  <!-- ONLY this script -->
+  <script src="script.js"></script>
 </body>
 </html>
