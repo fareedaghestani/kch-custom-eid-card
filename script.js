@@ -17,20 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
 
     if (name) {
-      const fontSize = 42;
-      ctx.font = `bold ${fontSize}px "Tajawal", Arial, sans-serif`;
-      ctx.fillStyle = '#ffffff';
-      ctx.textAlign = 'center';
-     ctx.textBaseline = 'middle';
+        const fontSize = 42;
+        ctx.font = `bold ${fontSize}px "Tajawal", Arial, sans-serif`;
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
 
         // Fixed pixel offset above center
         const textY = canvas.height / 2 - 80; // change 80 to move higher/lower
 
-        ctx.fillText(name, canvas.width / 2, textY);;
+        ctx.fillText(name, canvas.width / 2, textY);
 
-      canvas.classList.add('card-visible');
+        canvas.classList.add('card-visible');
     }
-  }
+}
 
   cardImage.onload = () => drawCard();
 
