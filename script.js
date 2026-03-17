@@ -10,23 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardPage = document.getElementById('cardPage');
 
   const cardImage = new Image();
-  cardImage.src = 'Eid-Mubarak.png'; // make sure file name matches exactly
+  cardImage.src = 'Eid-Mubarak.png'; // make sure exact name
 
   function drawCard(name = '') {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
 
     if (name) {
-      ctx.font = 'bold 42px "Tajawal", Arial, sans-serif';
+      const fontSize = 42;
+      ctx.font = `bold ${fontSize}px "Tajawal", Arial, sans-serif`;
       ctx.fillStyle = '#ffffff';
       ctx.textAlign = 'center';
-   ctx.textBaseline = 'middle';
+      ctx.textBaseline = 'middle';
 
-        // Move text slightly above middle
-        const offset = 0.15; // fraction of canvas height to move up (15%)
-        const textY = canvas.height / 2 - canvas.height * offset;
+      // ✅ Move text slightly above center (responsive)
+      const offset = 0.15; // 15% above center
+      const textY = canvas.height / 2 - (canvas.height * offset);
 
-        ctx.fillText(name, canvas.width / 2, textY);
+      ctx.fillText(name, canvas.width / 2, textY);
 
       canvas.classList.add('card-visible');
     }
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   downloadBtn.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.download = 'Eid-Mubarak.png';
+    link.download = 'Eid Mubarak.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
   });
