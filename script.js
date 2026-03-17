@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      const textY = canvas.height / 2;
+      const textY = canvas.height / 2 - 50;
       ctx.fillText(name, canvas.width / 2, textY);
 
       canvas.classList.add('card-visible');
