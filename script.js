@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
 
     if (name) {
-        const fontSize = 42;
+        const fontSize = 40;
         ctx.font = `bold ${fontSize}px "Tajawal", Arial, sans-serif`;
         ctx.fillStyle = '#ffffff';
         ctx.textAlign = 'center';
