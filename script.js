@@ -1,56 +1,59 @@
-const canvas = document.getElementById('eidCardCanvas');
-const ctx = canvas.getContext('2d');
-const nameInput = document.getElementById('nameInput');
-const generateBtn = document.getElementById('generateBtn');
-const downloadBtn = document.getElementById('downloadBtn');
-const backBtn = document.getElementById('backBtn');
-const inputPage = document.getElementById('inputPage');
-const cardPage = document.getElementById('cardPage');
+document.addEventListener("DOMContentLoaded", () => {
 
-const cardImage = new Image();
-cardImage.src = 'Eid-Mubarak.png';
+  const canvas = document.getElementById('eidCardCanvas');
+  const ctx = canvas.getContext('2d');
+  const nameInput = document.getElementById('nameInput');
+  const generateBtn = document.getElementById('generateBtn');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const backBtn = document.getElementById('backBtn');
+  const inputPage = document.getElementById('inputPage');
+  const cardPage = document.getElementById('cardPage');
 
-function drawCard(name = '') {
+  const cardImage = new Image();
+  cardImage.src = 'Eid-Mubarak.png'; // make sure file name matches exactly
+
+  function drawCard(name = '') {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(cardImage, 0, 0, canvas.width, canvas.height);
 
     if (name) {
-        ctx.font = 'bold 42px "Tajawal", Arial, sans-serif';
-        ctx.fillStyle = '#ffffff';
-        ctx.textAlign = 'center';
+      ctx.font = 'bold 42px "Tajawal", Arial, sans-serif';
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
 
-        // ✅ Text ABOVE center
-        const textY = canvas.height / 2;
+      const textY = canvas.height / 2;
+      ctx.fillText(name, canvas.width / 2, textY);
 
-        ctx.fillText(name, canvas.width / 2, textY);
-
-        // Show canvas with fade-in
-        canvas.classList.add('card-visible');
+      canvas.classList.add('card-visible');
     }
-}
+  }
 
-cardImage.onload = () => drawCard();
+  cardImage.onload = () => drawCard();
 
-generateBtn.addEventListener('click', () =>  {
+  generateBtn.addEventListener('click', () => {
     const name = nameInput.value.trim();
     if (!name) {
-        alert('Please enter your name!');
-        return;
+      alert('Please enter your name!');
+      return;
     }
+
     drawCard(name);
     inputPage.style.display = 'none';
     cardPage.style.display = 'block';
-};
+  });
 
-downloadBtn.onclick = () => {
+  downloadBtn.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.download = 'Eid Mubarak.png';
+    link.download = 'Eid-Mubarak.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
-};
+  });
 
-backBtn.onclick = () => {
+  backBtn.addEventListener('click', () => {
     cardPage.style.display = 'none';
     inputPage.style.display = 'block';
     canvas.classList.remove('card-visible');
-};
+  });
+
+});
